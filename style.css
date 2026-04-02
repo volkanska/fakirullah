@@ -1,25 +1,25 @@
 /* ================================================
-   MUHAMMED FAKİRULLAH — KUTSAL GECE (Sacred Night)
-   Tasavvuf Dergahı Şeyhi — Modern İslami Web Sitesi
+   MUHAMMED FAKİRULLAH — Modern İslami Yeşil
+   Tasavvuf Dergahı Şeyhi — Kişisel Web Sitesi
    ================================================ */
 
 /* ---- CSS Custom Properties ---- */
 :root {
-    /* Renk Sistemi — Kutsal Gece Paleti */
-    --color-night: #0F1923;
-    --color-night-deep: #0A1118;
-    --color-emerald: #1a3a2a;
-    --color-emerald-deep: #0d1f16;
+    /* Renk Sistemi — Modern İslami Yeşil */
+    --color-primary: #0d1f16;
+    --color-primary-light: #1a3a2a;
+    --color-primary-mid: #143d28;
+    --color-primary-deep: #071a0e;
     --color-gold: #C9A84C;
     --color-gold-light: #D4B965;
     --color-gold-glow: rgba(201,168,76,0.15);
     --color-burgundy: #7A2332;
-    --color-cream: #FAF7F2;
-    --color-parchment: #F0E9DD;
+    --color-light-bg: #f2f7f4;
+    --color-light-bg-alt: #e8f0eb;
     --color-white: #ffffff;
     --color-ink: #1C1410;
     --color-muted: #6B7280;
-    --color-glass: rgba(15, 25, 35, 0.12);
+    --color-glass: rgba(13, 31, 22, 0.12);
     --color-glass-border: rgba(201, 168, 76, 0.2);
 
     /* Font Sistemi */
@@ -59,7 +59,7 @@
     --duration-slow: 400ms;
 
     /* İslami Geometrik Pattern (8-pointed star) */
-    --islamic-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M40 4L48 18L64 10L58 28L76 28L64 38L76 48L58 48L64 66L48 58L40 72L32 58L16 66L22 48L4 48L16 38L4 28L22 28L16 10L32 18Z' fill='none' stroke='%23C9A84C' stroke-width='0.5' opacity='0.07'/%3E%3C/svg%3E");
+    --islamic-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M40 4L48 18L64 10L58 28L76 28L64 38L76 48L58 48L64 66L48 58L40 72L32 58L16 66L22 48L4 48L16 38L4 28L22 28L16 10L32 18Z' fill='none' stroke='%23C9A84C' stroke-width='0.6' opacity='0.15'/%3E%3C/svg%3E");
 }
 
 /* ---- Reset & Base ---- */
@@ -77,7 +77,7 @@ html {
 body {
     font-family: var(--font-body);
     color: var(--color-ink);
-    background-color: var(--color-cream);
+    background-color: var(--color-light-bg);
     line-height: 1.7;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -124,7 +124,7 @@ button {
     left: var(--space-2);
     padding: 12px 24px;
     background: var(--color-gold);
-    color: var(--color-night);
+    color: var(--color-primary);
     font-weight: 700;
     border-radius: 0 0 var(--radius-sm) var(--radius-sm);
     z-index: 9999;
@@ -148,8 +148,8 @@ button {
 
 /* ---- Scrollbar ---- */
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--color-cream); }
-::-webkit-scrollbar-thumb { background: var(--color-emerald); border-radius: 4px; }
+::-webkit-scrollbar-track { background: var(--color-light-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-primary-light); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-gold); }
 
 /* ================================================
@@ -161,7 +161,7 @@ button {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(10, 17, 24, 0.95);
+    background: rgba(13, 31, 22, 0.95);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(201,168,76,0.12);
@@ -173,7 +173,7 @@ button {
 
 .navbar.scrolled {
     padding: var(--space-1) 0;
-    background: rgba(10, 17, 24, 0.98);
+    background: rgba(13, 31, 22, 0.98);
     box-shadow: 0 2px 20px rgba(0,0,0,0.3);
 }
 
@@ -280,7 +280,7 @@ button {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: var(--color-night-deep);
+    background: var(--color-primary-deep);
 }
 
 .hero-bg {
@@ -289,7 +289,7 @@ button {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.35) saturate(0.6);
+    filter: brightness(0.5) saturate(0.7);
     z-index: 0;
 }
 
@@ -298,9 +298,9 @@ button {
     inset: 0;
     background: linear-gradient(
         180deg,
-        rgba(15,25,35,0.5) 0%,
-        rgba(15,25,35,0.65) 40%,
-        rgba(15,25,35,0.85) 100%
+        rgba(13,31,22,0.5) 0%,
+        rgba(13,31,22,0.65) 40%,
+        rgba(13,31,22,0.85) 100%
     );
     z-index: 1;
 }
@@ -311,7 +311,7 @@ button {
     z-index: 2;
     background-image: var(--islamic-pattern);
     background-size: 80px 80px;
-    opacity: 0.5;
+    opacity: 0.65;
 }
 
 .hero-content {
@@ -391,7 +391,7 @@ button {
     align-items: center;
     gap: 10px;
     background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
-    color: var(--color-night-deep);
+    color: var(--color-primary-deep);
     font-size: 1.05rem;
     font-weight: 700;
     padding: var(--space-2) 36px;
@@ -431,7 +431,7 @@ button {
 }
 
 .section:nth-child(even) {
-    background: var(--color-white);
+    background: linear-gradient(180deg, var(--color-light-bg), var(--color-light-bg-alt));
 }
 
 .section-header {
@@ -454,7 +454,7 @@ button {
     font-family: var(--font-display);
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
-    color: var(--color-night);
+    color: var(--color-primary);
     margin-bottom: var(--space-2);
     letter-spacing: 1px;
 }
@@ -495,6 +495,20 @@ button {
 /* ================================================
    HAKKINDA
    ================================================ */
+.hakkinda {
+    background: linear-gradient(180deg, var(--color-light-bg), var(--color-light-bg-alt));
+    position: relative;
+}
+.hakkinda::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--islamic-pattern);
+    background-size: 80px 80px;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
 .hakkinda-grid {
     display: grid;
     grid-template-columns: 300px 1fr;
@@ -509,7 +523,7 @@ button {
     height: 320px;
     border-radius: 130px 130px var(--radius-sm) var(--radius-sm);
     padding: 4px;
-    background: linear-gradient(180deg, var(--color-gold), var(--color-emerald), var(--color-gold));
+    background: linear-gradient(180deg, var(--color-gold), var(--color-primary-light), var(--color-gold));
     margin: 0 auto;
     box-shadow: var(--shadow-gold);
     position: relative;
@@ -534,7 +548,7 @@ button {
 .hakkinda-text h3 {
     font-family: var(--font-display);
     font-size: 2rem;
-    color: var(--color-night);
+    color: var(--color-primary);
     margin-bottom: var(--space-2);
     letter-spacing: 0.5px;
 }
@@ -547,8 +561,8 @@ button {
 }
 
 .tag {
-    background: rgba(15,25,35,0.06);
-    color: var(--color-night);
+    background: rgba(13,31,22,0.06);
+    color: var(--color-primary);
     font-size: 0.8rem;
     font-weight: 700;
     padding: 6px 14px;
@@ -576,7 +590,7 @@ button {
     background: var(--color-white);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
-    border: 1px solid rgba(201,168,76,0.1);
+    border: 1px solid rgba(26,58,42,0.1);
     transition: transform var(--duration-normal) var(--ease-out),
                 box-shadow var(--duration-normal) var(--ease-out);
 }
@@ -590,7 +604,7 @@ button {
     font-family: var(--font-display);
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--color-gold);
+    color: var(--color-primary-light);
     line-height: 1;
     font-variant-numeric: tabular-nums;
 }
@@ -606,7 +620,7 @@ button {
    İLAHİLER — PLAYER
    ================================================ */
 .ilahiler {
-    background: linear-gradient(180deg, var(--color-night) 0%, var(--color-night-deep) 100%);
+    background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-deep) 100%);
     padding: var(--space-12) 0;
     position: relative;
 }
@@ -617,7 +631,7 @@ button {
     inset: 0;
     background-image: var(--islamic-pattern);
     background-size: 80px 80px;
-    opacity: 0.4;
+    opacity: 0.65;
     pointer-events: none;
 }
 
@@ -644,62 +658,23 @@ button {
 .player-top {
     display: flex;
     align-items: center;
-    gap: var(--space-6);
-    padding: var(--space-6);
-    background: linear-gradient(135deg, rgba(201,168,76,0.04) 0%, rgba(15,25,35,0.2) 100%);
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    background: linear-gradient(135deg, rgba(201,168,76,0.04) 0%, rgba(13,31,22,0.2) 100%);
     border-bottom: 1px solid rgba(201,168,76,0.08);
 }
 
-.player-vinyl-wrapper {
+.player-cover-wrapper {
     flex-shrink: 0;
 }
 
-.player-vinyl {
-    width: 200px;
-    height: 200px;
-    border-radius: var(--radius-full);
-    background: radial-gradient(circle, #222 0%, #111 40%, #1a1a1a 60%, #111 100%);
-    position: relative;
-    box-shadow: 0 0 40px rgba(0,0,0,0.4);
-    will-change: transform;
-}
-
-.player-vinyl.spinning {
-    animation: vinylSpin 3s linear infinite;
-}
-
-@keyframes vinylSpin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-.vinyl-groove {
-    position: absolute;
-    inset: 20px;
-    border-radius: var(--radius-full);
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-.vinyl-groove-2 { inset: 40px; }
-.vinyl-groove-3 { inset: 60px; }
-
-.vinyl-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.player-cover-img {
     width: 80px;
     height: 80px;
-    border-radius: var(--radius-full);
-    overflow: hidden;
-    border: 3px solid var(--color-gold);
-    box-shadow: 0 0 15px rgba(201,168,76,0.3);
-}
-
-.vinyl-center img {
-    width: 100%;
-    height: 100%;
+    border-radius: var(--radius-sm);
     object-fit: cover;
+    border: 2px solid rgba(201,168,76,0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .player-info {
@@ -860,7 +835,7 @@ button {
     width: 60px;
     height: 60px;
     background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
-    color: var(--color-night-deep) !important;
+    color: var(--color-primary-deep) !important;
     font-size: 1.3rem;
     box-shadow: var(--shadow-gold);
     transition: transform var(--duration-normal) var(--ease-out),
@@ -1110,7 +1085,7 @@ button {
 .album-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(15,25,35,0.7);
+    background: rgba(13,31,22,0.7);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1127,7 +1102,7 @@ button {
     align-items: center;
     gap: var(--space-1);
     background: var(--color-gold);
-    color: var(--color-night-deep);
+    color: var(--color-primary-deep);
     font-weight: 700;
     padding: 12px 28px;
     border-radius: 50px;
@@ -1147,7 +1122,7 @@ button {
 .album-info h3 {
     font-family: var(--font-display);
     font-size: 1.3rem;
-    color: var(--color-night);
+    color: var(--color-primary);
     margin-bottom: 4px;
 }
 
@@ -1223,7 +1198,7 @@ button {
     align-items: center;
     justify-content: center;
     background: var(--color-gold);
-    color: var(--color-night-deep);
+    color: var(--color-primary-deep);
     border-radius: var(--radius-full);
     font-size: 1.1rem;
     transition: transform var(--duration-normal) var(--ease-spring);
@@ -1240,7 +1215,7 @@ button {
 .video-card-info h4 {
     font-size: 0.92rem;
     font-weight: 700;
-    color: var(--color-night);
+    color: var(--color-primary);
     line-height: 1.4;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -1257,7 +1232,7 @@ button {
     display: inline-flex;
     align-items: center;
     gap: var(--space-1);
-    background: var(--color-night);
+    background: var(--color-primary);
     color: var(--color-white);
     padding: 14px var(--space-4);
     border-radius: 50px;
@@ -1270,7 +1245,7 @@ button {
 
 .btn-show-more:hover {
     background: var(--color-gold);
-    color: var(--color-night-deep);
+    color: var(--color-primary-deep);
     transform: translateY(-2px);
 }
 
@@ -1282,7 +1257,7 @@ button {
    SOHBETLER
    ================================================ */
 .sohbetler {
-    background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-parchment) 100%);
+    background: linear-gradient(180deg, var(--color-light-bg-alt), var(--color-light-bg));
 }
 
 .sohbet-grid {
@@ -1339,7 +1314,7 @@ button {
     align-items: center;
     justify-content: center;
     background: rgba(201,168,76,0.9);
-    color: var(--color-night-deep);
+    color: var(--color-primary-deep);
     border-radius: var(--radius-full);
     font-size: 1rem;
 }
@@ -1348,7 +1323,7 @@ button {
     padding: var(--space-2);
     font-size: 0.9rem;
     font-weight: 700;
-    color: var(--color-night);
+    color: var(--color-primary);
     line-height: 1.4;
 }
 
@@ -1356,7 +1331,7 @@ button {
    ÖZLÜ SÖZLER
    ================================================ */
 .sozler {
-    background: var(--color-night);
+    background: var(--color-primary);
     overflow: hidden;
     position: relative;
 }
@@ -1367,7 +1342,7 @@ button {
     inset: 0;
     background-image: var(--islamic-pattern);
     background-size: 80px 80px;
-    opacity: 0.4;
+    opacity: 0.65;
     pointer-events: none;
 }
 
@@ -1491,7 +1466,7 @@ button {
 }
 
 .footer-content {
-    background: var(--color-night-deep);
+    background: var(--color-primary-deep);
     padding: var(--space-8) 0 30px;
     position: relative;
 }
@@ -1502,7 +1477,7 @@ button {
     inset: 0;
     background-image: var(--islamic-pattern);
     background-size: 80px 80px;
-    opacity: 0.3;
+    opacity: 0.55;
     pointer-events: none;
 }
 
@@ -1577,7 +1552,7 @@ button {
 
 .footer-social-icons a:hover {
     background: var(--color-gold);
-    color: var(--color-night-deep);
+    color: var(--color-primary-deep);
     border-color: var(--color-gold);
     transform: translateY(-3px);
 }
@@ -1603,7 +1578,7 @@ button {
     left: 0;
     right: 0;
     height: 64px;
-    background: rgba(10,17,24,0.95);
+    background: rgba(13,31,22,0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-top: 1px solid rgba(201,168,76,0.12);
@@ -1759,10 +1734,7 @@ button {
         scroll-behavior: auto !important;
     }
     .hero-bg {
-        filter: brightness(0.35) saturate(0.6);
-    }
-    .player-vinyl {
-        animation: none !important;
+        filter: brightness(0.5) saturate(0.7);
     }
     .hero-scroll-indicator {
         animation: none !important;
@@ -1817,7 +1789,7 @@ button {
         width: 280px;
         height: 100vh;
         height: 100dvh;
-        background: rgba(10,17,24,0.98);
+        background: rgba(13,31,22,0.98);
         backdrop-filter: blur(20px);
         flex-direction: column;
         padding: 80px 30px 30px;
@@ -1876,18 +1848,13 @@ button {
     .player-top {
         flex-direction: column;
         padding: var(--space-3);
-        gap: var(--space-3);
+        gap: var(--space-2);
         text-align: center;
     }
 
-    .player-vinyl {
-        width: 140px;
-        height: 140px;
-    }
-
-    .vinyl-center {
-        width: 56px;
-        height: 56px;
+    .player-cover-img {
+        width: 100px;
+        height: 100px;
     }
 
     .player-controls {

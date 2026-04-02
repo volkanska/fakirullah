@@ -104,7 +104,6 @@ const totalTimeEl = document.getElementById('totalTime');
 const trackNameEl = document.getElementById('trackName');
 const albumNameEl = document.getElementById('albumName');
 const playerCover = document.getElementById('playerCover');
-const playerVinyl = document.getElementById('playerVinyl');
 const soundWaves = document.getElementById('soundWaves');
 const volumeBar = document.getElementById('volumeBar');
 const volumeFill = document.getElementById('volumeFill');
@@ -308,7 +307,6 @@ function togglePlay() {
 
 function updatePlayState() {
     playIcon.className = isPlaying ? 'fas fa-pause' : 'fas fa-play';
-    playerVinyl.classList.toggle('spinning', isPlaying);
     soundWaves.classList.toggle('active', isPlaying);
 
     // Mini player icon sync
