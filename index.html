@@ -172,18 +172,16 @@
                     <!-- Player Top -->
                     <div class="player-top">
                         <div class="player-cover-wrapper">
-                            <img src="https://www.muhammedfakirullah.com/resimler/09-12-2021--10-50-44-newkapak-300x165.gif" alt="Albüm Kapağı" id="playerCover" width="80" height="80" loading="lazy" class="player-cover-img">
+                            <img src="https://www.muhammedfakirullah.com/resimler/09-12-2021--10-50-44-newkapak-300x165.gif" alt="Albüm Kapağı" id="playerCover" width="64" height="64" loading="lazy" class="player-cover-img">
                         </div>
                         <div class="player-info">
-                            <div class="player-now-playing">
+                            <div class="player-track-row">
                                 <div class="sound-waves" id="soundWaves">
                                     <span></span><span></span><span></span><span></span>
                                 </div>
-                                <span class="now-text">Şimdi Çalıyor</span>
+                                <h3 class="player-track-name" id="trackName">İbadallah</h3>
                             </div>
-                            <h3 class="player-track-name" id="trackName">İbadallah</h3>
                             <p class="player-album-name" id="albumName">Ya Rabbena I</p>
-
                             <div class="player-progress">
                                 <div class="progress-bar" id="progressBar">
                                     <div class="progress-fill" id="progressFill"></div>
@@ -194,7 +192,8 @@
                                     <span id="totalTime">0:00</span>
                                 </div>
                             </div>
-
+                        </div>
+                        <div class="player-controls-wrapper">
                             <div class="player-controls">
                                 <button class="ctrl-btn" id="shuffleBtn" title="Karıştır" aria-label="Karıştır"><i class="fas fa-shuffle" aria-hidden="true"></i></button>
                                 <button class="ctrl-btn" id="prevBtn" title="Önceki" aria-label="Önceki parça"><i class="fas fa-backward-step" aria-hidden="true"></i></button>
@@ -202,7 +201,6 @@
                                 <button class="ctrl-btn" id="nextBtn" title="Sonraki" aria-label="Sonraki parça"><i class="fas fa-forward-step" aria-hidden="true"></i></button>
                                 <button class="ctrl-btn" id="repeatBtn" title="Tekrarla" aria-label="Tekrarla"><i class="fas fa-repeat" aria-hidden="true"></i></button>
                             </div>
-
                             <div class="player-volume">
                                 <button class="vol-btn" id="muteBtn" title="Sessiz" aria-label="Sesi kapat veya aç"><i class="fas fa-volume-high" id="volIcon" aria-hidden="true"></i></button>
                                 <div class="volume-bar" id="volumeBar">
