@@ -426,7 +426,7 @@ button {
    SECTIONS — Common
    ================================================ */
 .section {
-    padding: var(--space-12) 0;
+    padding: 80px 0;
     position: relative;
 }
 
@@ -436,7 +436,7 @@ button {
 
 .section-header {
     text-align: center;
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-6);
 }
 
 .section-ornament {
@@ -448,6 +448,8 @@ button {
 
 .section-ornament svg {
     color: var(--color-gold);
+    width: 160px;
+    height: 24px;
 }
 
 .section-title {
@@ -457,13 +459,15 @@ button {
     color: var(--color-primary);
     margin-bottom: var(--space-2);
     letter-spacing: 1px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
 .section-divider {
-    width: 60px;
+    width: 80px;
     height: 2px;
     background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
     margin: 0 auto;
+    opacity: 0.8;
 }
 
 .section-subtitle {
@@ -816,8 +820,8 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(255,255,255,0.7);
-    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+    font-size: 1.1rem;
     transition: color var(--duration-normal) var(--ease-out),
                 background-color var(--duration-normal) var(--ease-out);
 }
@@ -943,9 +947,10 @@ button {
     padding: var(--space-1) var(--space-2);
     font-size: 0.8rem;
     font-weight: 700;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.7);
     border-radius: 50px;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.04);
     transition: color var(--duration-normal) var(--ease-out),
                 background-color var(--duration-normal) var(--ease-out),
                 border-color var(--duration-normal) var(--ease-out);
@@ -983,6 +988,7 @@ button {
     cursor: pointer;
     transition: background-color var(--duration-fast) var(--ease-out);
     border-left: 3px solid transparent;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
 }
 
 .playlist-item:hover {
@@ -1053,8 +1059,8 @@ button {
     border-radius: var(--radius-md);
     overflow: hidden;
     background: var(--color-white);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 4px 16px rgba(13,31,22,0.1);
+    border: 1px solid rgba(26,58,42,0.12);
     transition: transform var(--duration-normal) var(--ease-out),
                 box-shadow var(--duration-normal) var(--ease-out);
     cursor: pointer;
@@ -1121,9 +1127,9 @@ button {
 
 .album-info h3 {
     font-family: var(--font-display);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: var(--color-primary);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
 
 .album-info p {
@@ -1144,11 +1150,11 @@ button {
     border-radius: var(--radius-md);
     overflow: hidden;
     background: var(--color-white);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 4px 16px rgba(13,31,22,0.1);
     cursor: pointer;
     transition: transform var(--duration-normal) var(--ease-out),
                 box-shadow var(--duration-normal) var(--ease-out);
-    border: 1px solid rgba(0,0,0,0.06);
+    border: 1px solid rgba(26,58,42,0.12);
 }
 
 .video-card:hover {
@@ -1270,10 +1276,10 @@ button {
     border-radius: var(--radius-md);
     overflow: hidden;
     background: var(--color-white);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 4px 16px rgba(13,31,22,0.1);
     transition: transform var(--duration-normal) var(--ease-out),
                 box-shadow var(--duration-normal) var(--ease-out);
-    border: 1px solid rgba(0,0,0,0.06);
+    border: 1px solid rgba(26,58,42,0.12);
 }
 
 .sohbet-card:hover {
