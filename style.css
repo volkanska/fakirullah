@@ -932,20 +932,16 @@ button {
 /* Tabs */
 .playlist-tabs {
     display: flex;
-    gap: var(--space-1);
+    flex-wrap: wrap;
+    gap: 6px;
     margin-bottom: var(--space-2);
-    overflow-x: auto;
     padding-bottom: 4px;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
 }
-
-.playlist-tabs::-webkit-scrollbar { display: none; }
 
 .tab-btn {
     white-space: nowrap;
-    padding: var(--space-1) var(--space-2);
-    font-size: 0.8rem;
+    padding: 6px 14px;
+    font-size: 0.78rem;
     font-weight: 700;
     color: rgba(255,255,255,0.7);
     border-radius: 50px;
