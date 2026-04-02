@@ -132,6 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initStatCounters();
     initAlbumCards();
+    initMiniPlayer();
     restoreLastPlayed();
 });
 
@@ -152,8 +153,9 @@ function initNavbar() {
 
     // Hamburger toggle
     hamburger.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('open');
         hamburger.classList.toggle('active');
-        navMenu.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', isOpen);
     });
 
     // Close menu on link click
@@ -161,6 +163,7 @@ function initNavbar() {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navMenu.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
         });
     });
 }
@@ -276,6 +279,16 @@ function loadTrack(index) {
         activeItem.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
     }
 
+    // Update mini player
+    const miniTrack = document.getElementById('miniTrackName');
+    const miniAlbum = document.getElementById('miniAlbumName');
+    if (miniTrack) miniTrack.textContent = track.title;
+    if (miniAlbum) miniAlbum.textContent = track.album;
+
+    // Announce to screen readers
+    const announce = document.getElementById('playerAnnounce');
+    if (announce) announce.textContent = track.title + ' - ' + track.album + ' çalınıyor';
+
     // Save to localStorage
     localStorage.setItem('mf_lastTrack', index);
 }
@@ -297,6 +310,10 @@ function updatePlayState() {
     playIcon.className = isPlaying ? 'fas fa-pause' : 'fas fa-play';
     playerVinyl.classList.toggle('spinning', isPlaying);
     soundWaves.classList.toggle('active', isPlaying);
+
+    // Mini player icon sync
+    const miniIcon = document.getElementById('miniPlayIcon');
+    if (miniIcon) miniIcon.className = isPlaying ? 'fas fa-pause' : 'fas fa-play';
 }
 
 function prevTrack() {
@@ -346,6 +363,10 @@ function updateProgress() {
     const pct = (audio.currentTime / audio.duration) * 100;
     progressFill.style.width = pct + '%';
     currentTimeEl.textContent = formatTime(audio.currentTime);
+
+    // Mini player progress
+    const miniFill = document.getElementById('miniProgressFill');
+    if (miniFill) miniFill.style.width = pct + '%';
 }
 
 function formatTime(sec) {
@@ -492,23 +513,6 @@ function renderVideos() {
     });
 }
 
-// ---- Video Modal ----
-function openVideoModal(videoId) {
-    const modal = document.getElementById('videoModal');
-    const modalVideo = document.getElementById('modalVideo');
-    modalVideo.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" allowfullscreen allow="autoplay"></iframe>`;
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-}
-
-function closeVideoModal() {
-    const modal = document.getElementById('videoModal');
-    const modalVideo = document.getElementById('modalVideo');
-    modal.classList.remove('active');
-    modalVideo.innerHTML = '';
-    document.body.style.overflow = '';
-}
-
 document.getElementById('modalBackdrop').addEventListener('click', closeVideoModal);
 document.getElementById('modalClose').addEventListener('click', closeVideoModal);
 document.addEventListener('keydown', (e) => {
@@ -643,4 +647,59 @@ function initAlbumCards() {
             document.getElementById('ilahiler').scrollIntoView({ behavior: 'smooth' });
         });
     });
+}
+
+// ================================================
+// MINI PLAYER (Sticky Bottom)
+// ================================================
+function initMiniPlayer() {
+    const miniPlayer = document.getElementById('miniPlayer');
+    const miniPlayBtn = document.getElementById('miniPlayBtn');
+    const miniNextBtn = document.getElementById('miniNextBtn');
+    const ilahilerSection = document.getElementById('ilahiler');
+
+    if (!miniPlayer || !ilahilerSection) return;
+
+    // Show mini player when scrolled past ilahiler section
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // Show when ilahiler is NOT visible AND music has been interacted with
+            if (!entry.isIntersecting && (isPlaying || audio.currentTime > 0)) {
+                miniPlayer.classList.add('visible');
+            } else {
+                miniPlayer.classList.remove('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(ilahilerSection);
+
+    // Mini player controls
+    if (miniPlayBtn) {
+        miniPlayBtn.addEventListener('click', togglePlay);
+    }
+    if (miniNextBtn) {
+        miniNextBtn.addEventListener('click', nextTrack);
+    }
+}
+
+// ================================================
+// MODAL OVERSCROLL FIX
+// ================================================
+function openVideoModal(videoId) {
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    modalVideo.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" title="Video oynatıcı" allowfullscreen allow="autoplay"></iframe>`;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    document.body.style.overscrollBehavior = 'contain';
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    modal.classList.remove('active');
+    modalVideo.innerHTML = '';
+    document.body.style.overflow = '';
+    document.body.style.overscrollBehavior = '';
 }

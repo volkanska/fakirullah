@@ -24,7 +24,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Nunito:wght@300;400;600;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -32,30 +32,39 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Skip Link -->
+    <a href="#main" class="skip-link">Ana içeriğe geç</a>
+
     <!-- ===================== NAVBAR ===================== -->
     <header id="navbar" class="navbar">
         <div class="navbar-container">
             <a href="#hero" class="navbar-logo">
-                <svg class="logo-hilal" viewBox="0 0 40 40" width="36" height="36">
+                <svg class="logo-hilal" viewBox="0 0 40 40" width="36" height="36" aria-hidden="true">
                     <path d="M20 2C10 2 2 10 2 20s8 18 18 18c-6 0-12-6-12-14S10 6 20 2z" fill="currentColor"/>
                     <circle cx="30" cy="10" r="3" fill="currentColor"/>
                 </svg>
                 <span class="logo-text">Muhammed Fakirullah</span>
             </a>
 
-            <button class="hamburger" id="hamburger" aria-label="Menüyü aç">
+            <button class="hamburger" id="hamburger" aria-label="Menüyü aç" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
-            <nav class="navbar-menu" id="navMenu">
+            <nav class="navbar-menu" id="navMenu" role="navigation" aria-label="Ana menü">
                 <a href="#hero" class="nav-link active">Ana Sayfa</a>
                 <a href="#ilahiler" class="nav-link">İlahiler</a>
                 <a href="#albumler" class="nav-link">Albümler</a>
                 <a href="#videolar" class="nav-link">Videolar</a>
                 <a href="#sohbetler" class="nav-link">Sohbetler</a>
                 <a href="#sozler" class="nav-link">Özlü Sözler</a>
+                <div class="nav-social-mobile">
+                    <a href="https://www.youtube.com/@muhammedfakirullah" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/muhammedfakirullah.karadut" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/muhammed_fakirullah" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/muhammedfakiru1" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                </div>
             </nav>
 
             <div class="navbar-social">
@@ -67,20 +76,32 @@
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <!-- ===================== HERO ===================== -->
         <section id="hero" class="hero">
+            <img class="hero-bg" src="https://www.muhammedfakirullah.com/resimler/slider/249082522922728301551resm.jpg"
+                 alt="" role="presentation" width="1200" height="800" fetchpriority="high">
             <div class="hero-overlay"></div>
             <div class="hero-pattern"></div>
             <div class="hero-content">
-                <p class="hero-bismillah">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+                <div class="besmele-ornament">
+                    <span class="ornament-line"></span>
+                    <svg class="ornament-star" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 0l2.4 7.2L22 7.2l-6 4.8 2.4 7.2L12 14.4l-6.4 4.8 2.4-7.2-6-4.8h7.6z" fill="currentColor"/></svg>
+                    <span class="ornament-line"></span>
+                </div>
+                <p class="hero-bismillah" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+                <div class="besmele-ornament">
+                    <span class="ornament-line"></span>
+                    <svg class="ornament-star" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 0l2.4 7.2L22 7.2l-6 4.8 2.4 7.2L12 14.4l-6.4 4.8 2.4-7.2-6-4.8h7.6z" fill="currentColor"/></svg>
+                    <span class="ornament-line"></span>
+                </div>
                 <h1 class="hero-title">Muhammed Fakirullah</h1>
-                <p class="hero-subtitle">Karadut Kadiri ve Rufai Dergahı Şeyhi &bull; Ümmetin Buluşma Noktası</p>
+                <p class="hero-subtitle">Karadut Kadiri ve Rufai Dergahı Şeyhi</p>
                 <a href="#ilahiler" class="hero-cta">
-                    <i class="fas fa-play"></i> İlahileri Dinle
+                    <i class="fas fa-play" aria-hidden="true"></i> İlahileri Dinle
                 </a>
             </div>
-            <div class="hero-scroll-indicator">
+            <div class="hero-scroll-indicator" aria-hidden="true">
                 <i class="fas fa-chevron-down"></i>
             </div>
         </section>
@@ -89,14 +110,16 @@
         <section id="hakkinda" class="section hakkinda">
             <div class="container">
                 <div class="section-header animate-on-scroll">
-                    <div class="section-ornament">&#10022;</div>
+                    <div class="section-ornament" aria-hidden="true">
+                        <svg viewBox="0 0 120 20" width="120" height="20"><path d="M0,10 Q15,0 30,10 T60,10 T90,10 T120,10" stroke="currentColor" fill="none" stroke-width="0.8"/><circle cx="60" cy="10" r="3" fill="currentColor"/><circle cx="30" cy="10" r="1.5" fill="currentColor" opacity="0.5"/><circle cx="90" cy="10" r="1.5" fill="currentColor" opacity="0.5"/></svg>
+                    </div>
                     <h2 class="section-title">Hakkında</h2>
                     <div class="section-divider"></div>
                 </div>
                 <div class="hakkinda-grid">
                     <div class="hakkinda-photo animate-on-scroll">
                         <div class="photo-frame">
-                            <img src="https://www.muhammedfakirullah.com/resimler/slider/249082522922728301551resm.jpg" alt="Muhammed Fakirullah Hocaefendi" loading="lazy">
+                            <img src="https://www.muhammedfakirullah.com/resimler/slider/249082522922728301551resm.jpg" alt="Muhammed Fakirullah Hocaefendi" width="260" height="320" loading="lazy">
                         </div>
                     </div>
                     <div class="hakkinda-text animate-on-scroll">
@@ -137,10 +160,13 @@
         <section id="ilahiler" class="section ilahiler">
             <div class="container">
                 <div class="section-header animate-on-scroll">
-                    <div class="section-ornament">&#10022;</div>
+                    <div class="section-ornament" aria-hidden="true">
+                        <svg viewBox="0 0 120 20" width="120" height="20"><path d="M0,10 Q15,0 30,10 T60,10 T90,10 T120,10" stroke="currentColor" fill="none" stroke-width="0.8"/><circle cx="60" cy="10" r="3" fill="currentColor"/><circle cx="30" cy="10" r="1.5" fill="currentColor" opacity="0.5"/><circle cx="90" cy="10" r="1.5" fill="currentColor" opacity="0.5"/></svg>
+                    </div>
                     <h2 class="section-title">İlahiler</h2>
                     <div class="section-divider"></div>
                 </div>
+                <div aria-live="polite" class="sr-only" id="playerAnnounce"></div>
 
                 <div class="player-wrapper animate-on-scroll">
                     <!-- Player Top -->
@@ -151,7 +177,7 @@
                                 <div class="vinyl-groove vinyl-groove-2"></div>
                                 <div class="vinyl-groove vinyl-groove-3"></div>
                                 <div class="vinyl-center">
-                                    <img src="https://www.muhammedfakirullah.com/resimler/09-12-2021--10-50-44-newkapak-300x165.gif" alt="Albüm Kapağı" id="playerCover" loading="lazy">
+                                    <img src="https://www.muhammedfakirullah.com/resimler/09-12-2021--10-50-44-newkapak-300x165.gif" alt="Albüm Kapağı" id="playerCover" width="80" height="80" loading="lazy">
                                 </div>
                             </div>
                         </div>
@@ -177,15 +203,15 @@
                             </div>
 
                             <div class="player-controls">
-                                <button class="ctrl-btn" id="shuffleBtn" title="Karıştır"><i class="fas fa-shuffle"></i></button>
-                                <button class="ctrl-btn" id="prevBtn" title="Önceki"><i class="fas fa-backward-step"></i></button>
-                                <button class="ctrl-btn ctrl-play" id="playBtn" title="Çal/Duraklat"><i class="fas fa-play" id="playIcon"></i></button>
-                                <button class="ctrl-btn" id="nextBtn" title="Sonraki"><i class="fas fa-forward-step"></i></button>
-                                <button class="ctrl-btn" id="repeatBtn" title="Tekrarla"><i class="fas fa-repeat"></i></button>
+                                <button class="ctrl-btn" id="shuffleBtn" title="Karıştır" aria-label="Karıştır"><i class="fas fa-shuffle" aria-hidden="true"></i></button>
+                                <button class="ctrl-btn" id="prevBtn" title="Önceki" aria-label="Önceki parça"><i class="fas fa-backward-step" aria-hidden="true"></i></button>
+                                <button class="ctrl-btn ctrl-play" id="playBtn" title="Çal/Duraklat" aria-label="Çal veya duraklat"><i class="fas fa-play" id="playIcon" aria-hidden="true"></i></button>
+                                <button class="ctrl-btn" id="nextBtn" title="Sonraki" aria-label="Sonraki parça"><i class="fas fa-forward-step" aria-hidden="true"></i></button>
+                                <button class="ctrl-btn" id="repeatBtn" title="Tekrarla" aria-label="Tekrarla"><i class="fas fa-repeat" aria-hidden="true"></i></button>
                             </div>
 
                             <div class="player-volume">
-                                <button class="vol-btn" id="muteBtn" title="Sessiz"><i class="fas fa-volume-high" id="volIcon"></i></button>
+                                <button class="vol-btn" id="muteBtn" title="Sessiz" aria-label="Sesi kapat veya aç"><i class="fas fa-volume-high" id="volIcon" aria-hidden="true"></i></button>
                                 <div class="volume-bar" id="volumeBar">
                                     <div class="volume-fill" id="volumeFill"></div>
                                 </div>
@@ -196,8 +222,9 @@
                     <!-- Playlist -->
                     <div class="player-playlist">
                         <div class="playlist-search">
-                            <i class="fas fa-search"></i>
-                            <input type="text" id="playlistSearch" placeholder="İlahi ara...">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                            <label for="playlistSearch" class="sr-only">İlahi ara</label>
+                            <input type="search" id="playlistSearch" placeholder="İlahi ara..." autocomplete="off">
                         </div>
 
                         <div class="playlist-tabs" id="playlistTabs">
@@ -221,7 +248,9 @@
         <section id="albumler" class="section albumler">
             <div class="container">
                 <div class="section-header animate-on-scroll">
-                    <div class="section-ornament">&#10022;</div>
+                    <div class="section-ornament" aria-hidden="true">
+                        <svg viewBox="0 0 120 20" width="120" height="20"><path d="M0,10 Q15,0 30,10 T60,10 T90,10 T120,10" stroke="currentColor" fill="none" stroke-width="0.8"/><circle cx="60" cy="10" r="3" fill="currentColor"/><circle cx="30" cy="10" r="1.5" fill="currentColor" opacity="0.5"/><circle cx="90" cy="10" r="1.5" fill="currentColor" opacity="0.5"/></svg>
+                    </div>
                     <h2 class="section-title">Albümler</h2>
                     <div class="section-divider"></div>
                 </div>
@@ -229,9 +258,9 @@
                 <div class="album-grid animate-on-scroll">
                     <div class="album-card" data-album="album1">
                         <div class="album-cover">
-                            <img src="https://www.muhammedfakirullah.com/resimler/09-12-2021--10-50-44-newkapak-300x165.gif" alt="Ya Rabbena I" loading="lazy">
+                            <img src="https://www.muhammedfakirullah.com/resimler/09-12-2021--10-50-44-newkapak-300x165.gif" alt="Ya Rabbena I" width="400" height="250" loading="lazy">
                             <div class="album-overlay">
-                                <button class="album-play-btn"><i class="fas fa-play"></i> Dinle</button>
+                                <button class="album-play-btn" aria-label="Ya Rabbena I albümünü dinle"><i class="fas fa-play" aria-hidden="true"></i> Dinle</button>
                             </div>
                         </div>
                         <div class="album-info">
@@ -242,9 +271,9 @@
 
                     <div class="album-card" data-album="album2">
                         <div class="album-cover">
-                            <img src="https://www.muhammedfakirullah.com/resimler/09-12-2021--11-02-52-deste.jpg" alt="Ya Rabbena II" loading="lazy">
+                            <img src="https://www.muhammedfakirullah.com/resimler/09-12-2021--11-02-52-deste.jpg" alt="Ya Rabbena II" width="400" height="250" loading="lazy">
                             <div class="album-overlay">
-                                <button class="album-play-btn"><i class="fas fa-play"></i> Dinle</button>
+                                <button class="album-play-btn" aria-label="Ya Rabbena II albümünü dinle"><i class="fas fa-play" aria-hidden="true"></i> Dinle</button>
                             </div>
                         </div>
                         <div class="album-info">
@@ -255,9 +284,9 @@
 
                     <div class="album-card" data-album="album3">
                         <div class="album-cover">
-                            <img src="https://www.muhammedfakirullah.com/resimler/09-12-2021--11-03-12-album_351357_250_250.jpg" alt="Ey Deste-i Gül" loading="lazy">
+                            <img src="https://www.muhammedfakirullah.com/resimler/09-12-2021--11-03-12-album_351357_250_250.jpg" alt="Ey Deste-i Gül" width="400" height="250" loading="lazy">
                             <div class="album-overlay">
-                                <button class="album-play-btn"><i class="fas fa-play"></i> Dinle</button>
+                                <button class="album-play-btn" aria-label="Ey Deste-i Gül albümünü dinle"><i class="fas fa-play" aria-hidden="true"></i> Dinle</button>
                             </div>
                         </div>
                         <div class="album-info">
@@ -273,7 +302,9 @@
         <section id="videolar" class="section videolar">
             <div class="container">
                 <div class="section-header animate-on-scroll">
-                    <div class="section-ornament">&#10022;</div>
+                    <div class="section-ornament" aria-hidden="true">
+                        <svg viewBox="0 0 120 20" width="120" height="20"><path d="M0,10 Q15,0 30,10 T60,10 T90,10 T120,10" stroke="currentColor" fill="none" stroke-width="0.8"/><circle cx="60" cy="10" r="3" fill="currentColor"/><circle cx="30" cy="10" r="1.5" fill="currentColor" opacity="0.5"/><circle cx="90" cy="10" r="1.5" fill="currentColor" opacity="0.5"/></svg>
+                    </div>
                     <h2 class="section-title">Videolar</h2>
                     <div class="section-divider"></div>
                 </div>
@@ -294,7 +325,9 @@
         <section id="sohbetler" class="section sohbetler">
             <div class="container">
                 <div class="section-header animate-on-scroll">
-                    <div class="section-ornament">&#10022;</div>
+                    <div class="section-ornament" aria-hidden="true">
+                        <svg viewBox="0 0 120 20" width="120" height="20"><path d="M0,10 Q15,0 30,10 T60,10 T90,10 T120,10" stroke="currentColor" fill="none" stroke-width="0.8"/><circle cx="60" cy="10" r="3" fill="currentColor"/><circle cx="30" cy="10" r="1.5" fill="currentColor" opacity="0.5"/><circle cx="90" cy="10" r="1.5" fill="currentColor" opacity="0.5"/></svg>
+                    </div>
                     <h2 class="section-title">Muhabbet Kervanı</h2>
                     <div class="section-divider"></div>
                     <p class="section-subtitle">Cuma sohbetleri ve nasihat programları</p>
@@ -303,22 +336,22 @@
                 <div class="sohbet-grid animate-on-scroll">
                     <a href="https://www.youtube.com/watch?v=QDbhiCX9IbY" target="_blank" rel="noopener" class="sohbet-card">
                         <div class="sohbet-thumb">
-                            <img src="https://img.youtube.com/vi/QDbhiCX9IbY/hqdefault.jpg" alt="Ölçü ve Tartı" loading="lazy">
-                            <div class="sohbet-play"><i class="fas fa-play"></i></div>
+                            <img src="https://img.youtube.com/vi/QDbhiCX9IbY/hqdefault.jpg" alt="Ölçü ve Tartı" width="480" height="360" loading="lazy">
+                            <div class="sohbet-play"><i class="fas fa-play" aria-hidden="true"></i></div>
                         </div>
                         <h4>Ölçü Ve Tartı — Muhabbet Kervanı</h4>
                     </a>
                     <a href="https://www.youtube.com/watch?v=VJ4BTbm8cFc" target="_blank" rel="noopener" class="sohbet-card">
                         <div class="sohbet-thumb">
-                            <img src="https://img.youtube.com/vi/VJ4BTbm8cFc/hqdefault.jpg" alt="Cuma Sohbeti 2" loading="lazy">
-                            <div class="sohbet-play"><i class="fas fa-play"></i></div>
+                            <img src="https://img.youtube.com/vi/VJ4BTbm8cFc/hqdefault.jpg" alt="Cuma Sohbeti 2" width="480" height="360" loading="lazy">
+                            <div class="sohbet-play"><i class="fas fa-play" aria-hidden="true"></i></div>
                         </div>
                         <h4>Muhabbet Kervanı — Cuma Sohbeti 2</h4>
                     </a>
                     <a href="https://www.youtube.com/watch?v=zh-6QZGXYJA" target="_blank" rel="noopener" class="sohbet-card">
                         <div class="sohbet-thumb">
-                            <img src="https://img.youtube.com/vi/zh-6QZGXYJA/hqdefault.jpg" alt="Cuma Sohbeti" loading="lazy">
-                            <div class="sohbet-play"><i class="fas fa-play"></i></div>
+                            <img src="https://img.youtube.com/vi/zh-6QZGXYJA/hqdefault.jpg" alt="Cuma Sohbeti" width="480" height="360" loading="lazy">
+                            <div class="sohbet-play"><i class="fas fa-play" aria-hidden="true"></i></div>
                         </div>
                         <h4>Muhabbet Kervanı — Cuma Sohbeti</h4>
                     </a>
@@ -330,7 +363,9 @@
         <section id="sozler" class="section sozler">
             <div class="container">
                 <div class="section-header animate-on-scroll">
-                    <div class="section-ornament">&#10022;</div>
+                    <div class="section-ornament" aria-hidden="true">
+                        <svg viewBox="0 0 120 20" width="120" height="20"><path d="M0,10 Q15,0 30,10 T60,10 T90,10 T120,10" stroke="currentColor" fill="none" stroke-width="0.8"/><circle cx="60" cy="10" r="3" fill="currentColor"/><circle cx="30" cy="10" r="1.5" fill="currentColor" opacity="0.5"/><circle cx="90" cy="10" r="1.5" fill="currentColor" opacity="0.5"/></svg>
+                    </div>
                     <h2 class="section-title">Özlü Sözler</h2>
                     <div class="section-divider"></div>
                 </div>
@@ -379,9 +414,9 @@
                         </div>
                     </div>
                     <div class="quotes-nav">
-                        <button class="quote-nav-btn" id="quotePrev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="quote-nav-btn" id="quotePrev" aria-label="Önceki söz"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
                         <div class="quotes-dots" id="quotesDots"></div>
-                        <button class="quote-nav-btn" id="quoteNext"><i class="fas fa-chevron-right"></i></button>
+                        <button class="quote-nav-btn" id="quoteNext" aria-label="Sonraki söz"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
                     </div>
                 </div>
             </div>
@@ -392,7 +427,7 @@
     <footer class="footer">
         <div class="footer-divider">
             <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
-                <path d="M0,30 Q150,0 300,30 T600,30 T900,30 T1200,30 V60 H0 Z" fill="var(--color-dark)"/>
+                <path d="M0,30 Q150,0 300,30 T600,30 T900,30 T1200,30 V60 H0 Z" fill="var(--color-night-deep)"/>
             </svg>
         </div>
         <div class="footer-content">
@@ -429,17 +464,30 @@
                 </div>
 
                 <div class="footer-bottom">
-                    <p>&copy; 2000&ndash;2025 Muhammed Fakirullah. Tüm hakları saklıdır.</p>
+                    <p>&copy; 2000&ndash;2026 Muhammed Fakirullah. Tüm hakları saklıdır.</p>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Mini Player (sticky bottom) -->
+    <div class="mini-player" id="miniPlayer" aria-label="Müzik oynatıcı">
+        <button class="mini-player-btn" id="miniPlayBtn" aria-label="Çal veya duraklat"><i class="fas fa-play" id="miniPlayIcon" aria-hidden="true"></i></button>
+        <div class="mini-player-info">
+            <span class="mini-track-name" id="miniTrackName">İbadallah</span>
+            <span class="mini-album-name" id="miniAlbumName">Ya Rabbena I</span>
+        </div>
+        <div class="mini-progress" id="miniProgress">
+            <div class="mini-progress-fill" id="miniProgressFill"></div>
+        </div>
+        <button class="mini-player-btn" id="miniNextBtn" aria-label="Sonraki parça"><i class="fas fa-forward-step" aria-hidden="true"></i></button>
+    </div>
+
     <!-- Video Modal -->
-    <div class="video-modal" id="videoModal">
+    <div class="video-modal" id="videoModal" role="dialog" aria-label="Video oynatıcı">
         <div class="modal-backdrop" id="modalBackdrop"></div>
         <div class="modal-content">
-            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            <button class="modal-close" id="modalClose" aria-label="Kapat"><i class="fas fa-times" aria-hidden="true"></i></button>
             <div class="modal-video" id="modalVideo"></div>
         </div>
     </div>
