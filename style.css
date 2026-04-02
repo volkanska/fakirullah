@@ -663,7 +663,7 @@ button {
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    padding: var(--space-3) var(--space-4);
+    padding: var(--space-2) var(--space-3);
     background: linear-gradient(135deg, rgba(201,168,76,0.04) 0%, rgba(13,31,22,0.2) 100%);
     border-bottom: 1px solid rgba(201,168,76,0.08);
 }
@@ -673,8 +673,8 @@ button {
 }
 
 .player-cover-img {
-    width: 80px;
-    height: 80px;
+    width: 64px;
+    height: 64px;
     border-radius: var(--radius-sm);
     object-fit: cover;
     border: 2px solid rgba(201,168,76,0.2);
@@ -733,23 +733,23 @@ button {
 
 .player-track-name {
     font-family: var(--font-display);
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     color: var(--color-white);
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .player-album-name {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: rgba(255,255,255,0.5);
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-1);
 }
 
 /* Progress Bar */
 .player-progress {
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-1);
 }
 
 .progress-bar {
@@ -809,19 +809,19 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-2);
-    margin-bottom: 20px;
+    gap: var(--space-1);
+    margin-bottom: var(--space-1);
 }
 
 .ctrl-btn {
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     border-radius: var(--radius-full);
     display: flex;
     align-items: center;
     justify-content: center;
     color: rgba(255,255,255,0.8);
-    font-size: 1.1rem;
+    font-size: 1rem;
     transition: color var(--duration-normal) var(--ease-out),
                 background-color var(--duration-normal) var(--ease-out);
 }
@@ -836,11 +836,11 @@ button {
 }
 
 .ctrl-play {
-    width: 60px;
-    height: 60px;
+    width: 52px;
+    height: 52px;
     background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
     color: var(--color-primary-deep) !important;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     box-shadow: var(--shadow-gold);
     transition: transform var(--duration-normal) var(--ease-out),
                 box-shadow var(--duration-normal) var(--ease-out);
@@ -1849,23 +1849,23 @@ button {
 
     .player-top {
         flex-direction: column;
-        padding: var(--space-3);
-        gap: var(--space-2);
+        padding: var(--space-2);
+        gap: var(--space-1);
         text-align: center;
     }
 
     .player-cover-img {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
 
     .player-controls {
-        gap: 10px;
+        gap: 6px;
     }
 
     .ctrl-play {
-        width: 52px;
-        height: 52px;
+        width: 48px;
+        height: 48px;
     }
 
     .album-grid {
